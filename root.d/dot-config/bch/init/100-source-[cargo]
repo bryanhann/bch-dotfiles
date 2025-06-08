@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-source ${HOME}/.cargo/env
+which uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+#[ -f ${HOME}/.cargo/env ] || bch:000:note "missing file [~/.cargo/env]"
+#[ -f ${HOME}/.cargo/env ] && source ${HOME}/.cargo/env
+#source ${HOME}/.cargo/env
