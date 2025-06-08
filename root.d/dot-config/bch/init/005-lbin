@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-mkdir -p ~/.local/bin
 
+mkdir -p ~/.local/bin
 
 [[ ! ":$PATH:" == *":~/.local/bin:"* ]] && {
     export PATH=${PATH}:~/.local/bin
@@ -11,8 +11,5 @@ for s in $(ls ${HOME}/.config/bch/lbin/bch*); do
     [ ! -f $d ] && ln -s $s $d
 done
 
-echo 111
 source bch.000.bash_colors.sh
-echo 111
-read
 source bch.000.fun.sh
