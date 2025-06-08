@@ -11,3 +11,7 @@ uv.lock
 auth.json
 build
 dist
+*.log
+vim_runtime
+_hide
+.hide

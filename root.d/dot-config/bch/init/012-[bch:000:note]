@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+bch:000:note () {
+    clr_reverse " [:note:] $@ "; 
+}

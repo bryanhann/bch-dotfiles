@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+
+##########################################################################
+#   Define Base directories relative to which  files should be stored
+##########################################################################
+
+#-------------------------------------------------------------------------
+#   user-specific data files
+#-------------------------------------------------------------------------
+
+export XDG_DATA_HOME=${HOME}/.local/share
+
+#-------------------------------------------------------------------------
+#   user-specific configuration files
+#-------------------------------------------------------------------------
+
+export XDG_CONFIG_HOME=${HOME}/.config
+
+#-------------------------------------------------------------------------
+#   user-specific state files.
+#
+#   Data that should persist between application restarts
+#   that is more ephemeral or less portable than for CONFIG_HOME
+#-------------------------------------------------------------------------
+
+export XDG_STATE_HOME=${HOME}/.local/state
+
+#-------------------------------------------------------------------------
+#   to search for data files in addition to the $XDG_DATA_HOME
+#
+#   (colon seperated)
+#-------------------------------------------------------------------------
+
+export XDG_DATA_DIRS=/usr/local/share/:/usr/share/
+
+#-------------------------------------------------------------------------
+#   to search for config files in addition to the $XDG_CONFIG_HOME
+#
+#   (colon seperated)
+#-------------------------------------------------------------------------
+
+export XDG_CONFIG_DIRS=/etc/xdg
+
+#-------------------------------------------------------------------------
+#   user-specific non-essential data files
+#-------------------------------------------------------------------------
+
+export XDG_CACHE_HOME=${HOME}/.cache
+
+#-------------------------------------------------------------------------
+#   user-specific non-essential runtime files and other file objects
+#   eg: sockets.
+#
+#   The directory MUST be owned by the user with Unix access mode 0700.
+#
+#   The lifetime of the directory MUST be bound to the user
+#   being logged in. It MUST be created when the user first logs i
+#   in and if the user fully logs out the directory MUST be removed. 
+#   If the user logs in more than once they should get pointed to 
+#   the same directory, and it is mandatory that the directory 
+#   continues to exist from their first login to their last logout
+#   on the system, and not removed in between. Files in the directory 
+#   MUST not survive reboot or a full logout/login cycle.
+#
+#
+#   If $XDG_RUNTIME_DIR is not set applications should fall back
+#   to a replacement directory with similar capabilities and print
+#   a warning message. Applications should use this directory for
+#   communication and synchronization purposes and should not place
+#   larger files in it, since it might reside in runtime memory and
+#   cannot necessarily be swapped out to disk.
+#-------------------------------------------------------------------------
+
+export XDG_RUNTIME_DIR=${HOME}/.local/run/$(id -u)
+
+########################################################################
+#   Insure relevant directories exist
+##########################################################################
+
+mkdir -p ${XDG_DATA_HOME}
+mkdir -p ${XDG_CONFIG_HOME}
+mkdir -p ${XDG_STATE_HOME}
+mkdir -p ${XDG_CACHE_HOME}
+mkdir -p ${XDG_RUNTIME_DIR}
+

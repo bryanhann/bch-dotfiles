@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+source ${HOME}/.config/bch/init/000-[bch:000:debug]
+
+bch:000:debug ++[$BASH_SOURCE]
+mkdir -p ${HOME}/.local/bin
+export PATH=${PATH}:${HOME}/.local/bin
+exit () { echo PROFILE: Try 'builtin exit'; }
+bch:000:debug --[$BASH_SOURCE]
+
+bash
+
+echo IN PROFILE
+
+#==END OF SCRIPT===================================

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+bch:000:shutdown () {
+    echo DO THIS ONLY OF LOGGING OUT OF EVERYTHING.
+    echo PRESS [ENTER] TO CONTINUE...
+    read
+    rm -rf ${HOME}/.local/run/$(id -u)
+}
+
+bch:000:note "try [bch:000:shutdown] only when shutting down"

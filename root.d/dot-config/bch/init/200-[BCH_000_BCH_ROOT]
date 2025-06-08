@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+export BCH_000_BCH_ROOT=~/.BCH
+
+mkdir -p ${BCH_000_BCH_ROOT}

@@ -8,8 +8,6 @@ Base configuration for bch modules.
 
 ## USE
 
-To setup:
-- Run: [./SETUP.sh]
+To install:
 
-To use:
-- Run: [uv run bch-dotfiles]
+- Run: [./install]

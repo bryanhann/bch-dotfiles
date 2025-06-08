@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+bch:000:link () {
+    local src=$1
+    local name=$2
+    [ -z $2 ] && name=$(basename $src)
+    local dst=~/.local/bin/$name
+    bch:000:debug [${FUNCNAME}]  $(basename $dst)
+    [ -e $dst ] && return
+    ln -s $src $dst
+}

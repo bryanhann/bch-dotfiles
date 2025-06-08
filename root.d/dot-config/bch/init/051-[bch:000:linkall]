@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+bch:000:linkall () {
+    for pth in $(ls $1/bch.*); do
+        bch:000:link $pth
+    done
+}

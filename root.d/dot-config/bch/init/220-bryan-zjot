@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export BRYAN_000_ACC=${XDG_DATA_HOME}/BRYAN_000_ACC
+export BRYAN_000_ZJOT_ACC=${BRYAN_000_ACC}/zjot/acc
+
+if [ ! -d ${BRYAN_000_ACC} ]; then
+    gh repo clone bryanhann/bryan.000.acc ${BRYAN_000_ACC}
+fi

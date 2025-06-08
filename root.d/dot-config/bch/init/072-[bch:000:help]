@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+bch:000:help () {
+cat <<HELP
+
+Some functions:
+    bch:000:help            -- this help
+    bch:000:debugger on     -- turn on debugging
+    bch:000:debugger off    -- turn off debuging
+    :p.q                    -- use quick prompt
+    :p.s                    -- use short prompt
+    :p.l                    -- use long prompt
+HELP
+}
+

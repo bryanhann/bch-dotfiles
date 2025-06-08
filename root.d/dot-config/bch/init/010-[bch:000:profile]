@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+bch:000:profile () {
+    [ -z ${BASH_SOURCE[@]: -1} ]  && return 1
+    [ ! ".profile" = "$(basename ${BASH_SOURCE[@]: -1})" ] && return 1
+    return 0
+}
+

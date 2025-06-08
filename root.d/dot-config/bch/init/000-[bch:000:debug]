@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+bch:000:debugger-help () {
+cat<<USAGE
+    : function :debugger
+    :
+    : usage:
+    :    :debug on    -- turn on debugging
+    :    :debug off   -- turn off debuging
+    :    :debug stat  -- exit 0 iff on
+    :
+USAGE
+}
+
+bch:000:debugger () {
+    : function :debugger
+    :
+    : usage:
+    :    :debug on    -- turn on debugging
+    :    :debug off   -- turn off debuging
+    :    :debug stat  -- exit 0 iff on
+    :
+
+    local flag=~/.bch.debug.off
+    case $1. in
+        on.) rm -f $flag ;;
+        off.) touch $flag ;;
+        stat.) [ ! -f $flag ] ;;
+        *) ${FUNCNAME}-help ;;
+        #*) echo "for help, try [declare -f ${FUNCMAME}]" ;;
+    esac
+}
+
+bch:000:debug () {
+    bch:000:debugger stat && echo "}}} $@";
+}
+
