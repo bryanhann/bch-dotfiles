@@ -7,12 +7,19 @@ which stow && {
     exit
 }
 
-[ -d ~/hold ] && echo ~/hold already exists. quitting.
-[ -d ~/hold ] && exit
-mkdir ~/hold
-mv ~/.bashrc ~/hold/
-mv ~/.profile ~/hold
-mv ~/.config ~/hold
+
+[ -d ~/.copy.dotfiles ] && {
+    for ii in $(seq 99); do
+        [ -d ~/.copy.dotfiles.${ii} ] && continue
+        mv ~/.copy.dotfiles ~/.copy.dotfiles.${ii}
+        break
+    done
+}
+
+mkdir ~/.copy.dotfiles
+mv ~/.bashrc ~/.copy.dotfiles/
+mv ~/.profile ~/.copy.dotfiles
+mv ~/.config ~/.copy.dotfiles
 ln -s ${PWD}/root.d/dot-bashrc ~/.bashrc
 ln -s ${PWD}/root.d/dot-profile ~/.profile
 ln -s ${PWD}/root.d/dot-config ~/.config
