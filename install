@@ -2,13 +2,5 @@
 
 cd $(dirname $0)
 
-amix () {
-    SRC=https://github.com/amix/vimrc.git
-    DST=~/.config/vim/vim_runtime
-    [ .$1 == .-f  ] && rm -rf ${DST} 2> /dev/null
-    [   -d ${DST} ] && echo AMIX exists. To reinstall try -f
-    [ ! -d ${DST} ] && git clone ${SRC} ${DST}
-}
-
-stow . --dotfiles -d ${PWD}/root.d -t ~ &&  amix $1
+stow . --dotfiles -d ${PWD}/root.d -t ~
 
