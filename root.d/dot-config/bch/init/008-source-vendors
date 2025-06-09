@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+source bch.000.bash_colors.sh
+source bch.000.fun.sh
