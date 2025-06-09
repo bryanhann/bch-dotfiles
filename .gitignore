@@ -4,6 +4,9 @@
 # Ignore these.
 
 */dot-config/vim
+*/dot-config/git
+*/dot-config/gh
+*/dot-config/uv
 
 #-----------------------------------------------------
 .venv
