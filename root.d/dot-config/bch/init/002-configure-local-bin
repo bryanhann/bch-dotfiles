@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 
 mkdir -p ~/.local/bin
-
-[[ ! ":$PATH:" == *":~/.local/bin:"* ]] && {
-    export PATH=${PATH}:~/.local/bin
-}
+bch:000:append ~/.local/bin
