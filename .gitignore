@@ -1,3 +1,11 @@
+#-----------------------------------------------------
+# We maintain some ~/.config/* directories in the repo
+# but some (like vim) are injected from other sources.
+# Ignore these.
+
+*/dot-config/vim
+
+#-----------------------------------------------------
 .venv
 __pycache__/
 *.py[cod]
@@ -12,6 +20,6 @@ auth.json
 build
 dist
 *.log
-vim_runtime
 _hide
 .hide
+*.hide
