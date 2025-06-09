@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-bch:000:note foo
 [ -f ~/.ssh/activate.sh ] || bch:000:note "missing ~/.ssh/activate.sh"
 [ -f ~/.ssh/activate.sh ] && source  ~/.ssh/activate.sh
