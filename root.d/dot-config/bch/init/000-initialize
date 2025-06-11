@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+::append:: ${HOME}/.local/bin
+mkdir -p ~/.local/bin
+
+# Do what is normally done via [~/.profile]
+
+[ -z $BCH_000_INITIALIZED ] && {
+    export BCH_000_INITIALIZED=1
+    exit () { echo 'try: builtin exit' ; }
+}

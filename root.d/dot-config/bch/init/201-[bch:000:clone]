@@ -14,9 +14,9 @@ bch:000:clone () {
     for repo in $(__repos | grep ^bch\.[0-9][0-9][0-9]\. | sort); do
         src=git@github.com:bryanhann/${repo}
         dst=${BCH_000_BCH_ROOT}/${repo}
-        [   -e $dst ] && bch:000:debug found repo ${repo}
+        [   -e $dst ] && ::dbg:: found repo ${repo}
         [   -e $dst ] && continue
-        [ ! -e $dst ] && bch:000:debug "}}} git clone ${src} ${dst}"
+        [ ! -e $dst ] && ::dbg:: "}}} git clone ${src} ${dst}"
         [ ! -e $dst ] && gh repo clone ${src} ${dst}
     done
     touch $flag

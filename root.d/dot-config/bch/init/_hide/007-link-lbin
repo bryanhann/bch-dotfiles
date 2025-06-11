@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+::lbin:: ${HOME}/.config/bch/lbin

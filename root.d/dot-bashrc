@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
 
-source ${HOME}/.config/bch/init/000-[bch:000:debug]
-
-bch:000:debug ++[$BASH_SOURCE]
+[ -f ~/DEBUG ] && echo "[:dbg:] ++[$BASH_SOURCE]"
 source ${HOME}/.config/bch/activate.sh
-bch:000:debug --[$BASH_SOURCE]
-bch:000:note 'try [bch:000:help]'
-ssh-add -l > /dev/null || echo " WARNING: ssh has no users added. Try [ssh-add]."
+[ -f ~/DEBUG ] && echo "[:dbg:] --[$BASH_SOURCE]"
 
 #==END OF SCRIPT===================================

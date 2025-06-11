@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
+
+ls ~/.local/bin
+echo 77777777777
+read
 source bch.000.bash_colors.sh
 source bch.000.fun.sh

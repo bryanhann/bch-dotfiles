@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 mkdir -p ~/.local/bin
-bch:000:append ~/.local/bin
+::append:: ~/.local/bin

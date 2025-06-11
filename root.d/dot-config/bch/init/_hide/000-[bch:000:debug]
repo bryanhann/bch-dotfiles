@@ -21,11 +21,11 @@ bch:000:debugger () {
     :    :debug stat  -- exit 0 iff on
     :
 
-    local flag=~/.bch.debug.off
+    local flag=~/DEBUG
     case $1. in
-        on.) rm -f $flag ;;
-        off.) touch $flag ;;
-        stat.) [ ! -f $flag ] ;;
+        off.) rm -f $flag ;;
+        on.) touch $flag ;;
+        stat.) [ -f $flag ] ;;
         *) ${FUNCNAME}-help ;;
         #*) echo "for help, try [declare -f ${FUNCMAME}]" ;;
     esac

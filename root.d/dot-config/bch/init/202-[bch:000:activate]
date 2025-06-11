@@ -4,7 +4,8 @@ bch:000:activate () {
     local repo
     local target
     for repo in $(ls ${BCH_000_BCH_ROOT} | grep ^bch.[0-9] | sort); do
-        bch:000:debug "    activating repo [${repo}]"
+        ::dbg:: " . ${target}"
+        #::dbg:: "    activating repo: $repo"
         target=${BCH_000_BCH_ROOT}/${repo}/.bch/activate.sh
         [ -f ${target} ] || continue
         source ${target}
