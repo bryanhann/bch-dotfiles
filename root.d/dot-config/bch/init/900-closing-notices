@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-bch:000:note 'try [bch:000:help]'
-ssh-add -l > /dev/null || echo " WARNING: ssh has no users added. Try [ssh-add]."
-

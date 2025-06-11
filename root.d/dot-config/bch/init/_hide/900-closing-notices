@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+ssh-add -l > /dev/null || ::warn:: " WARNING: ssh has no users added. Try [ssh-add]."
+

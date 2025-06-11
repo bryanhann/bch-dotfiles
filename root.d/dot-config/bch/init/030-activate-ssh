@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+[ -f ~/.ssh/activate.sh ] || :warn: "missing ~/.ssh/activate.sh"
+[ -f ~/.ssh/activate.sh ] && source  ~/.ssh/activate.sh
+
+[ -f ~/.ssh/bryan/activate.sh ] || :warn: "missing ~/.ssh/bryan/activate.sh"
+[ -f ~/.ssh/bryan/activate.sh ] && source  ~/.ssh/bryan/activate.sh
+
+ssh-add -l > /dev/null || :warn: " WARNING: ssh has no users added. Try [ssh-add]."
