@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-[ -f ~/.ssh/activate.sh ] || bch:000:note "missing ~/.ssh/activate.sh"
-[ -f ~/.ssh/activate.sh ] && source  ~/.ssh/activate.sh

@@ -7,4 +7,4 @@ bch:000:shutdown () {
     rm -rf ${HOME}/.local/run/$(id -u)
 }
 
-bch:000:note "try [bch:000:shutdown] only when shutting down"
+::note:: "try [bch:000:shutdown] only when shutting down"

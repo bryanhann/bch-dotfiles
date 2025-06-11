@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+export _BCH_ROOT=~/.BCH
+mkdir -p ${_BCH_ROOT}
+
+:clone: () {
+    local repo
+    local src
+    local dst
+    local flag=${_BCH_ROOT}/flag.is.cloned
+    [ -f $flag ] && [ "$1" == "--skip" ] && return
+    touch $flag
+    repos () { gh repo list --no-archived -L 1000 --json name,owner --jq .[].name ;}
+    for repo in $(repos | grep ^bch\.[0-9][0-9][0-9]\. | sort); do
+        src=git@github.com:bryanhann/${repo}
+        dst=${_BCH_ROOT}/${repo}
+        [   -e $dst ] && :dbg: found repo ${repo}
+        [   -e $dst ] && continue
+        [ ! -e $dst ] && :dbg: "git clone ${src} ${dst}"
+        [ ! -e $dst ] && gh repo clone ${src} ${dst}
+    done
+}
+
+:clone: --skip
+
+for repo in $(ls ${_BCH_ROOT} | grep ^bch.[0-9] | sort); do
+    t=${_BCH_ROOT}/${repo}/.bch/activate.sh
+    [ ! -f $t ] && :warn: "not found: $t"
+    [ ! -f $t ] && continue
+    [   -f $t ] && :dbg: ". $t"
+    [   -f $t ] && source  $t
+done
+
+:note: "try [:clone:] to reclone bch repos"

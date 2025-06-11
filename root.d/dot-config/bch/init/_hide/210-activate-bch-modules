@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+bch:000:clone
+::note:: "try [bch:000:clone -f] to reclone repos"
+bch:000:activate
