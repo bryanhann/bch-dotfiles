@@ -1,1 +1,0 @@
-export BCH_VJOT_ACC=~/.BCH_VJOT_ACC
