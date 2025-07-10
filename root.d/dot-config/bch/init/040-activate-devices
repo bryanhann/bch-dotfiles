@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+for pth in $(ls /Volumes); do
+    target=/Volumes/$pth/.bch/activate.sh
+    [ -f $target ] && source $target
+done
