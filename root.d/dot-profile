@@ -1,10 +1,25 @@
 #!/usr/bin/env bash
 
 [ -f ~/DEBUG ] && echo "[:dbg:] ++[$BASH_SOURCE]"
+
+# Prevent accidental closing of connection by requiring an explicit exit.
+exit () { echo in top shell. try: builtin exit.; }
+
+# Insure [~/.local/bin] exists
+mkdir -p ~/.local/bin
+
+# Insure [~/.local/bin] is on PATH
+[[ ! ":$PATH:" == *":${HOME}/.local/bin:"* ]] && export PATH=~/.local/bin:foo:$PATH
+
+# Legacy export. Seek its removal
+export BCH_000_INITIALIZED=1
+
 [ -f ~/DEBUG ] && echo "[:dbg:] --[$BASH_SOURCE]"
 
+
+echo to turn on debugging, try \'touch ~/DEBUG\'
 bash
 
-echo IN PROFILE
+echo IN PROFILE. 
 
 #==END OF SCRIPT===================================
