@@ -21,14 +21,3 @@ mkdir -p ${_BCH_ROOT}
     done
 }
 
-:clone: --skip
-
-for repo in $(ls ${_BCH_ROOT} | grep ^bch.[0-9] | sort); do
-    t=${_BCH_ROOT}/${repo}/.bch/activate.sh
-    [ ! -f $t ] && :warn: "not found: $t"
-    [ ! -f $t ] && continue
-    [   -f $t ] && :dbg: ". $t"
-    [   -f $t ] && source  $t
-done
-
-:note: "try [:clone:] to reclone bch repos"

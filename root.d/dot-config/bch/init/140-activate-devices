@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+foo () {
+    local name
+    for name in $(ls $1); do
+        :activate: $1/$name
+    done
+}
+
+foo /Volumes
+unset foo

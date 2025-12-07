@@ -2,8 +2,10 @@
 
 source $BCH_000_VEND/bash_colors.sh
 
-:note: () { clr_reverse "[:note:] $@ "; }
-:warn: () { clr_reverse "[:warn:] $@ "; }
+:note: () { :reverse: "[:note:]: $@ "; }
+:warn: () { :reverse: "[:warn:]: $@ "; }
+#:note: () { clr_reverse "[:note:] $@ "; }
+#:warn: () { clr_reverse "[:warn:] $@ "; }
 
 #------------------------------------------------
 

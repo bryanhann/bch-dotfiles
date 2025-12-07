@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+4bch:uvsync () {
+   [ ! -f $1/pyproject.toml ] && return
+   pushd $1 > /dev/null || return
+   uv sync
+   popd > /dev/null
+}
+
+4bch:confirm () {
+    [ -f $1/.bch/activate.sh ] && return 0
+    :reverse: " not a bch module: $1";
+    return 1
+}
+
+4bch:lbin () {
+    local real
+    local link
+    for real in $(ls $1/.bch/lbin/bch.* 2> /dev/null); do
+        link=~/.local/bin/$(basename $real)
+        [ -f ${link} ] && continue
+        :reverse: "   symlink: $(basename $real)"
+        ln -s $real $link
+    done
+}
+
+4bch:activate () {
+    4bch:confirm $1 && {
+        :reverse: " :activate: $1"
+        4bch:lbin $1
+        4bch:uvsync $1
+        #4bch:activate $1
+        :reverse: "$    source $1/.bch/activate.sh"
+        source $1/.bch/activate.sh
+    }
+}
+
+:activate: () (
+    [ -f $1/.bch/activate.sh ] || return
+    :note: ".  $1/.bch/activate.sh"
+    .  $1/.bch/activate.sh
+)

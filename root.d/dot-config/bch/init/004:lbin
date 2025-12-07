@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+:link: () {
+    mkdir -p ~/.local/bin
+    local real=$1
+    local link=~/.local/bin/$(basename $real)
+    [ -f ${link} ] && return
+    :reverse:  " :link: $link"
+    ln -s $real $link
+}
+
+:lbin: () {
+    :reverse: " DEPRECATED :lbin: $*"
+    local real
+    for real in $(ls $1/bch.* 2> /dev/null); do
+        :link: $real
+    done
+}

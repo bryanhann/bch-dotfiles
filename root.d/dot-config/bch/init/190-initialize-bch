@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+:clone: --skip
+for repo in $(ls ${_BCH_ROOT} | grep ^bch.[0-9] | sort); do
+    source ${_BCH_ROOT}/${repo}/.bch/activate.sh
+    #:activate: ${_BCH_ROOT}/${repo}
+    #:activate: ${_BCH_ROOT}/${repo}
+    #:note: source ${_BCH_ROOT}/${repo}/.bch/activate.sh
+    #source ${_BCH_ROOT}/${repo}/.bch/activate.sh
+done
+
+:note: "try [:clone:] to reclone bch repos"

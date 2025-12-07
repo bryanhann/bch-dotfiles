@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+:activate: ~/.ssh
+
+#:source: ~/.ssh/activate.sh
+#:source: ~/.ssh/bryan/activate.sh
+#ssh-add -l > /dev/null || :warn: " WARNING: ssh has no users added. Try [ssh-add]."
+

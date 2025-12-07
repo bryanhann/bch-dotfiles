@@ -1,0 +1,10 @@
+
+:source: () {
+echo nonono
+read
+    :reverse: " :source: $1"
+    #[ -f ~/DEBUG ] && echo :source: $1
+    ##:dbg: source $1
+    [ ! -f $1 ] &&  :warn: "missing ${1}"
+    [   -f $1 ] && source ${1}
+}
